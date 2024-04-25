@@ -1,0 +1,15 @@
+.no-bullets{
+    list-style-type: none;
+   
+    
+}
+li a {text-decoration: none;
+    color: brown;}
+
+footer{
+    background-color: aqua;
+}
+header{
+    background-color: aqua;
+}
+
