@@ -1,17 +1,21 @@
 <%- include("partials/header.ejs")%>
-
-<%if(!locals.posts){%>
-<h2>There are no posts yet 🥺</h2>
-<%}else{%>
-
+<%if(locals.add){%>
+    <form action="/submit" method="post">
+        <input name="name" type="text" class="feedback-input" placeholder="name" />
+        <textarea name="article" type="text" class="feedback-input" placeholder="write here, write now"></textarea>
+        <input type="submit" value="SUBMIT" />
+      </form>
 <%}%>
-
-
-
-
-
-
-
-
+<%if(locals.posts.length===0){%>
+<h2>There are no posts yet 🥺</h2>
+<%}else{for(let i=0;i<posts.length;i++){%>
+    <form  action="/delete" method="post">
+        <h2><%=posts[i]["name"]%></h2>
+        <p><%=posts[i]["article"]%></p>
+        <p><%=posts[i]["timeStamp"]%></p>
+        <input value=<%=i%> name="id" type="hidden">
+        <input type="submit" value="🗑️" />
+    </form>
+    <%}}%>
 
 <%- include("partials/footer.ejs")%>
