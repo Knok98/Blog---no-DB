@@ -9,9 +9,9 @@
 <%}%>
 <%if(locals.editMode){%>
     <form action="/submit" method="post">
-        <input name="name" type="text" class="feedback-input" value=<%=eName%> />
+        <input name="name" type="text" class="feedback-input" value="<%=eName%>" />
         <input name="article" type="text" class="feedback-input"
-            value=<%=ePlace%>></input>
+            value="<%=ePlace%>"></input>
         <input value=<%=eID%> name="id" type="hidden">
         <input type="submit" value="SUBMIT" />
     </form>
